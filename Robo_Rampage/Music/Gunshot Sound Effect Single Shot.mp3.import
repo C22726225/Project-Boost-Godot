@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cutta4kp2ooyf"
+path="res://.godot/imported/Gunshot Sound Effect Single Shot.mp3-25319903f2b4036dc240185f85fea0d4.mp3str"
+
+[deps]
+
+source_file="res://Music/Gunshot Sound Effect Single Shot.mp3"
+dest_files=["res://.godot/imported/Gunshot Sound Effect Single Shot.mp3-25319903f2b4036dc240185f85fea0d4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

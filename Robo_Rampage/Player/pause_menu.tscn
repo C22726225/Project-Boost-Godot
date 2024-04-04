@@ -1,0 +1,139 @@
+[gd_scene load_steps=9 format=3 uid="uid://bgycnkund6krb"]
+
+[ext_resource type="FontFile" uid="uid://xnr5v4wbdnvs" path="res://Assets/Tektur-Medium.ttf" id="1_24qum"]
+[ext_resource type="Shader" uid="uid://dho11okkvmu8t" path="res://Player/game_over_menu.tres" id="2_5sun4"]
+[ext_resource type="Script" path="res://Player/pause_menu.gd" id="2_p30l7"]
+
+[sub_resource type="Theme" id="Theme_kcuu8"]
+default_font = ExtResource("1_24qum")
+default_font_size = 64
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k7mm3"]
+shader = ExtResource("2_5sun4")
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_uaglg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ybkop"]
+font_size = 96
+
+[sub_resource type="Theme" id="Theme_6tjex"]
+default_font_size = 32
+
+[node name="PauseMenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_kcuu8")
+script = ExtResource("2_p30l7")
+
+[node name="BackgroundBlur" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_k7mm3")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("PlaceholderTexture2D_uaglg")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+custom_minimum_size = Vector2(512, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Paused
+"
+label_settings = SubResource("LabelSettings_ybkop")
+horizontal_alignment = 1
+
+[node name="ContinueButton" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Continue
+"
+
+[node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[node name="HBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -159.0
+offset_bottom = 159.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_6tjex")
+text = "W - Walk forward"
+
+[node name="Label2" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_6tjex")
+text = "A - Strafe Left"
+
+[node name="Label3" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_6tjex")
+text = "D - Strafe Right"
+
+[node name="Label4" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_6tjex")
+text = "S - Walk backwards"
+
+[node name="Label5" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_6tjex")
+text = "Space - Jump"
+
+[node name="Label6" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_6tjex")
+text = "LeftClick - Shoot"
+
+[node name="Label7" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_6tjex")
+text = "RightClick - Aim"
+
+[node name="HBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -196.0
+offset_right = 196.0
+offset_bottom = 88.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="HBoxContainer2"]
+layout_mode = 2
+theme = SubResource("Theme_6tjex")
+text = "Red Pickup - Rifle Ammo"
+
+[node name="Label2" type="Label" parent="HBoxContainer2"]
+layout_mode = 2
+theme = SubResource("Theme_6tjex")
+text = "Blue Pickup - SMG Ammo"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

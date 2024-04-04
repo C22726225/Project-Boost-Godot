@@ -1,0 +1,67 @@
+[gd_scene load_steps=8 format=3 uid="uid://dm5j0cj4l3t85"]
+
+[ext_resource type="FontFile" uid="uid://xnr5v4wbdnvs" path="res://Assets/Tektur-Medium.ttf" id="1_1dlir"]
+[ext_resource type="Script" path="res://Player/game_over_menu.gd" id="2_3af2c"]
+[ext_resource type="Shader" uid="uid://dho11okkvmu8t" path="res://Player/game_over_menu.tres" id="3_bmemg"]
+
+[sub_resource type="Theme" id="Theme_kcuu8"]
+default_font = ExtResource("1_1dlir")
+default_font_size = 64
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pm0ib"]
+shader = ExtResource("3_bmemg")
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_v3a35"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_aaynd"]
+font_size = 96
+
+[node name="GameOverMenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_kcuu8")
+script = ExtResource("2_3af2c")
+
+[node name="BackgroundBlur" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_pm0ib")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("PlaceholderTexture2D_v3a35")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+custom_minimum_size = Vector2(512, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "You died"
+label_settings = SubResource("LabelSettings_aaynd")
+horizontal_alignment = 1
+
+[node name="RestartButton" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Retry"
+
+[node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

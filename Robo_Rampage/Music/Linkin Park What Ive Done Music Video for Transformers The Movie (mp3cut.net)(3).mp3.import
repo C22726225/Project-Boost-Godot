@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://xcqjsvs4f4a7"
+path="res://.godot/imported/Linkin Park What Ive Done Music Video for Transformers The Movie (mp3cut.net)(3).mp3-7376b597397585e6492cd556e1f6dafd.mp3str"
+
+[deps]
+
+source_file="res://Music/Linkin Park What Ive Done Music Video for Transformers The Movie (mp3cut.net)(3).mp3"
+dest_files=["res://.godot/imported/Linkin Park What Ive Done Music Video for Transformers The Movie (mp3cut.net)(3).mp3-7376b597397585e6492cd556e1f6dafd.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

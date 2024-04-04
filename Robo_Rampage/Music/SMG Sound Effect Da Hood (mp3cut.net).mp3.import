@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://blixdidm1umyc"
+path="res://.godot/imported/SMG Sound Effect Da Hood (mp3cut.net).mp3-b35881c1e111e3c2c80e2d30d5688dda.mp3str"
+
+[deps]
+
+source_file="res://Music/SMG Sound Effect Da Hood (mp3cut.net).mp3"
+dest_files=["res://.godot/imported/SMG Sound Effect Da Hood (mp3cut.net).mp3-b35881c1e111e3c2c80e2d30d5688dda.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
